@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraSwipe : MonoBehaviour
 {
 
-    float t;
+    public float rotSpeed=1;
     // Use this for initialization
     void Start()
     {
@@ -14,8 +14,13 @@ public class CameraSwipe : MonoBehaviour
 
     void Update()
     {
-        t += Input.GetAxis("Mouse ScrollWheel");
-        transform.rotation = Quaternion.Lerp(Quaternion.Euler(Vector3.up), Quaternion.Euler(Vector3.up * 180), t);
+        if(Input.GetMouseButton(1)&& !Input.GetMouseButton(0))
+        {
+            transform.rotation = (Quaternion.Euler(new Vector3(
+                transform.rotation.eulerAngles.x + Input.GetAxis("Mouse Y") * -rotSpeed, 
+                transform.rotation.eulerAngles.y + Input.GetAxis("Mouse X") * rotSpeed, 
+                transform.rotation.eulerAngles.z)));
+        }
       
     }
 
