@@ -18,5 +18,9 @@ public class ManageScene : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
+    public void SalleBpuzzle()
+    {
+        SceneManager.LoadScene("SalleBpuzzle");
+    }
 
 }
