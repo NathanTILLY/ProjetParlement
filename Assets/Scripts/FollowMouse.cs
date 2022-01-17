@@ -6,24 +6,36 @@ public class FollowMouse : MonoBehaviour
 {
     private bool mustFollow;
     private float distanceFromCam;
-
+    public SnapGridManager sgm;
+    public SnapGrid currentSnapGrid;
+    
     public void SetFollow()
     {
-        distanceFromCam = transform.position.z;
-        mustFollow = true;
+        distanceFromCam = transform.position.z - Camera.main.transform.position.z;
+        mustFollow = sgm.Activate();
+
+        
     }
     public void StopFollow()
     {
-        mustFollow = false;
+      
+        mustFollow = sgm.desActivate();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(mustFollow)
+        if(mustFollow && sgm.currentSnapGrid != null)
         {
-            transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distanceFromCam));
+            
+            var mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distanceFromCam));
+            Debug.Log(sgm.currentSnapGrid);
+            var unSnappedPosition = new Vector3(mouseposition.x, mouseposition.y, mouseposition.z);
+            transform.position = sgm.currentSnapGrid.transform.position;
+            currentSnapGrid = sgm.currentSnapGrid;
+            
         }
     }
+
 }
