@@ -24,4 +24,20 @@ public class SnapGridManager : MonoBehaviour
         }
         return false;
     }
+
+    public void CheckSnapGrid()
+    {
+        var _return = false;
+
+        foreach (var sg in snapGrids)
+        {
+            _return = sg.IsValid();
+        }
+
+        if (_return)
+        {
+            //ce qu'il se passe quand tu gagne 
+            Debug.Log("ça marche " );
+        }
+    }
 }

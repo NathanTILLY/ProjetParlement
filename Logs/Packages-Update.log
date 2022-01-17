@@ -109,3 +109,29 @@ The following packages were updated:
   com.unity.collab-proxy from version 1.13.5 to 1.15.4
   com.unity.ide.visualstudio from version 2.0.11 to 2.0.12
   com.unity.timeline from version 1.5.6 to 1.6.3
+
+=== Mon Jan 17 09:40:08 2022
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were added:
+  com.unity.visualscripting@1.7.6
+
+=== Mon Jan 17 09:41:49 2022
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.15.7 to 1.15.4
+  com.unity.test-framework from version 1.1.30 to 1.1.29
+
+=== Mon Jan 17 09:43:02 2022
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.15.7 to 1.15.4
+  com.unity.test-framework from version 1.1.30 to 1.1.29

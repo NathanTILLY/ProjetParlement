@@ -5,7 +5,8 @@ using UnityEngine;
 public class SnapGrid : MonoBehaviour
 {
     public SnapGridManager snapgridmanager;
-    public FollowMouse expectedPiece;
+    public FollowMouse expectedPiece, currentPiece;
+
     private void OnMouseEnter()
     {
         snapgridmanager.currentSnapGrid = this;
@@ -15,5 +16,10 @@ public class SnapGrid : MonoBehaviour
     private void OnMouseExit()
     {
         snapgridmanager.currentSnapGrid = null;
+    }
+
+    public bool IsValid()
+    {
+        return currentPiece == expectedPiece;
     }
 }
